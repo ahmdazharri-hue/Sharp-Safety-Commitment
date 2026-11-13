@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b244b">
+  <title>Safety Commitment Twibbon Generator | P2K3 – SEID</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="hero">
+    <p class="eyebrow">P2K3 – SEID · PT SHARP ELECTRONICS INDONESIA</p>
+    <h1>Safety Commitment Twibbon Generator</h1>
+    <p>Unggah foto, tuliskan komitmen keselamatan, lalu bubuhkan tanda tangan elektronik.</p>
+  </header>
+
+  <div class="workspace">
+    <section class="panel" aria-label="Formulir twibbon">
+      <h2>Personalisasi Twibbon</h2>
+      <label class="field">Foto pribadi
+        <input id="photoInput" type="file" accept="image/*">
+        <span class="hint">Foto akan dipotong otomatis mengikuti lingkaran hijau.</span>
+      </label>
+      <label class="field">Nama lengkap
+        <input id="nameInput" type="text" maxlength="42" placeholder="Masukkan nama lengkap" autocomplete="name">
+      </label>
+      <label class="field">Komitmen 1 · sisi kiri
+        <textarea id="commitment1" maxlength="90" rows="3" placeholder="Contoh: Saya selalu menggunakan APD sesuai standar."></textarea>
+        <span class="counter"><span id="count1">0</span>/90 karakter</span>
+      </label>
+      <label class="field">Komitmen 2 · sisi kanan
+        <textarea id="commitment2" maxlength="90" rows="3" placeholder="Contoh: Saya melaporkan setiap potensi bahaya."></textarea>
+        <span class="counter"><span id="count2">0</span>/90 karakter</span>
+      </label>
+      <div class="field">
+        <div class="signature-heading">
+          <label for="signatureCanvas">Tanda tangan elektronik</label>
+          <button type="button" id="clearSignature" class="text-button">Hapus</button>
+        </div>
+        <div class="signature-wrap">
+          <canvas id="signatureCanvas" width="1000" height="300" aria-label="Area tanda tangan"></canvas>
+        </div>
+        <span class="hint">Gunakan mouse, stylus, atau jari pada layar sentuh.</span>
+      </div>
+      <button type="button" id="downloadBtn" class="primary">Unduh Twibbon PNG</button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <p class="privacy">Foto dan tanda tangan diproses secara lokal di browser. Tidak ada data yang diunggah ke server.</p>
+    </section>
+
+    <section class="preview-section">
+      <div class="preview-heading">
+        <h2>Preview langsung</h2>
+        <span>2048 × 2048 px</span>
+      </div>
+      <div class="preview-frame">
+        <canvas id="previewCanvas" width="2048" height="2048" aria-label="Preview hasil twibbon"></canvas>
+      </div>
+      <p class="preview-note">Preview mengikuti hasil file PNG yang diunduh.</p>
+    </section>
+  </div>
+  <footer>SAFETY EVERYONE EVERYDAY · WORK SAFE. GO HOME SAFE.</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
